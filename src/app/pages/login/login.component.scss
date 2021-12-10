@@ -1,9 +1,34 @@
-.login-box{
-    img{
-    top: 35px;
-    left: 110px;
-    width: 261px;
-    height: 261px;
-    opacity: 1;
+#login-page {
+    .login-box {
+        // img{
+        // top: 35px;
+        // left: 110px;
+        // width: 261px;
+        // height: 261px;
+        // opacity: 1;
+        // }
+        max-width: 300px;
+        width: 100%;
+        margin-left: 15%;
+        margin-top: 10%;
+    }
+
+    .login-wrapper {
+        margin-top: 40%;
+    }
+
+    .logo {
+        max-width: 210px;
+        max-height: 80px;
+    }
+
+    .img-box {
+        background-image: url(../../../assets/background/imagem-login.png) !important;
+        background-color: var(--dark-bg-secondary) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 100vh !important;
     }
 }
