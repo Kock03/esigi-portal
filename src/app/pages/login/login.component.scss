@@ -1,26 +1,39 @@
 #login-page {
+    width: 100%;
     .login-box {
-        max-width: 300px;
-        width: 100%;
+        width: 400px;
         margin-left: 15%;
         margin-top: 10%;
     }
 
-    .example-label{
+    .login-box-mobile {
+        margin: auto;
+        margin-top: 10%;
+        width: 80% !important;
+        .login-wrapper {
+            margin-top: 30%;
+        }
+    }
+
+    .login-wrapper {
+        margin-top: 50%;
+        h2 {
+            font-size: 36px;
+            // font-family: Branding;
+            font-weight: bold;
+        }
+    }
+
+    .example-label {
         top: 498px;
         left: 136px;
         width: 520px;
         height: 77px;
     }
 
-    .login-wrapper {
-        margin-top: 100px;
-
-        h2{
-            font-size: 40px;
-            font-family: Branding;
-            font-style: bold;
-        }
+    .login-form {
+        margin-top: 10%;
+        width: 100%;
     }
 
     .logo {
@@ -29,23 +42,9 @@
         margin-top: 10%;
     }
 
-    
-    .mat-form-field{
-        max-height: 150%;
+    .mat-form-field {
         height: 100%;
-        width: 125%;
-        max-width: 200%;
-        margin-left: 0% !important;
-        padding-left: 0% !important;
-    }
-    
-    .mat-raised-button{
-        background-color: #8538C2 !important;
-        text-align: center;
-        color: white;
-        width:82%;
-        margin-left: 15%;
-        height: 48px;
+        width: 100%;
     }
 
     .img-box {
@@ -57,5 +56,12 @@
         background-attachment: fixed;
         height: 100vh !important;
     }
-    
+
+    // .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    //     margin: 0 !important;
+    // }
+
+    // .mat-form-field-wrapper {
+    //     padding-bottom: 8px !important;
+    // }
 }
