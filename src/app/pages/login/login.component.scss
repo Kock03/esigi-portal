@@ -1,25 +1,51 @@
 #login-page {
     .login-box {
-        // img{
-        // top: 35px;
-        // left: 110px;
-        // width: 261px;
-        // height: 261px;
-        // opacity: 1;
-        // }
         max-width: 300px;
         width: 100%;
         margin-left: 15%;
         margin-top: 10%;
     }
 
+    .example-label{
+        top: 498px;
+        left: 136px;
+        width: 520px;
+        height: 77px;
+    }
+
     .login-wrapper {
-        margin-top: 40%;
+        margin-top: 100px;
+
+        h2{
+            font-size: 40px;
+            font-family: Branding;
+            font-style: bold;
+        }
     }
 
     .logo {
-        max-width: 210px;
+        max-width: 180px;
         max-height: 80px;
+        margin-top: 10%;
+    }
+
+    
+    .mat-form-field{
+        max-height: 150%;
+        height: 100%;
+        width: 125%;
+        max-width: 200%;
+        margin-left: 0% !important;
+        padding-left: 0% !important;
+    }
+    
+    .mat-raised-button{
+        background-color: #8538C2 !important;
+        text-align: center;
+        color: white;
+        width:82%;
+        margin-left: 15%;
+        height: 48px;
     }
 
     .img-box {
@@ -31,4 +57,5 @@
         background-attachment: fixed;
         height: 100vh !important;
     }
+    
 }

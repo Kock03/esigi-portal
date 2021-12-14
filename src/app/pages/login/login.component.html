@@ -1,16 +1,32 @@
-<div id="login-page" fxFlex="100" >
+<div id="login-page" fxFlex="100">
   <div fxLayout="column" fxFlex="30">
     <div class="login-box">
-      <img src="../../../assets/logo/envolti.png" alt="logo" class="logo" />
+      <img src="../../../assets/logo/logoEnvolti.png" alt="logo" class="logo" />
 
       <div class="login-wrapper">
         <h2 class="no-margin">Faça seu login</h2>
+        <p></p>
         <p>Acesse o portal com seu usuário e sua senha</p>
       </div>
-    </div>
+      <div class="login-form">
+        <div fxLayout="column" fxLayoutAlign="space-around start" ></div>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Usuário</mat-label>
+              <input matInput placeholder="email" />
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Senha</mat-label>
+              <input matInput placeholder="senha" />
+            </mat-form-field>
+          </p>
+        </div>
+        <div fxLayoutAlign="start" fxLayout="column">
+          <button mat-raised-button>Entrar</button>
+        </div>
+      </div>
   </div>
-
-  <div fxFlex="70" class="img-box" fxLayoutAlign="center center" fxHide.sm>
-  </div>
-
+  <div fxFlex="70" class="img-box" fxLayoutAlign="center center" fxHide  fxShow.gt-sm ></div>
 </div>
