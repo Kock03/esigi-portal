@@ -44,7 +44,20 @@
 
     .mat-form-field {
         height: 100%;
-        width: 100%;
+        width: 125%;
+        max-width: 200%;
+        margin-left: 0% !important;
+        padding-left: 0% !important;
+    }
+    
+    .mat-raised-button{
+        background-color: #8538C2 !important;
+        text-align: center;
+        color: white;
+        width:124%;
+        margin-left: 15%;
+        height: 48px;
+        margin: 0%;
     }
 
     .img-box {
