@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   tabIndex = 0;
   loginForm!: FormGroup;
   constructor(private _fb: FormBuilder) {
-    // this.environment.setShowMenu(false);
   }
 
   ngOnInit(): void {

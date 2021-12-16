@@ -19,7 +19,6 @@
         margin-top: 50%;
         h2 {
             font-size: 36px;
-            // font-family: Branding;
             font-weight: bold;
         }
     }
@@ -44,7 +43,7 @@
 
     .mat-form-field {
         height: 100%;
-        width: 125%;
+        width: 100%;
         max-width: 200%;
         margin-left: 0% !important;
         padding-left: 0% !important;
@@ -58,6 +57,7 @@
         margin-left: 15%;
         height: 48px;
         margin: 0%;
+
     }
 
     .img-box {
@@ -69,12 +69,4 @@
         background-attachment: fixed;
         height: 100vh !important;
     }
-
-    // .mat-form-field-appearance-outline .mat-form-field-wrapper {
-    //     margin: 0 !important;
-    // }
-
-    // .mat-form-field-wrapper {
-    //     padding-bottom: 8px !important;
-    // }
 }
