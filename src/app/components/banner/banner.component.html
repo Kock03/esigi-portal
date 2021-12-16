@@ -1,0 +1,13 @@
+<div
+  id="banner"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  *ngIf="showBanner"
+>
+  <div>
+    <p class="no-margin">{{ message }}</p>
+  </div>
+  <div>
+    <button (click)="hideBanner()" mat-button>OK</button>
+  </div>
+</div>

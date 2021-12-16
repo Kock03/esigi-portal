@@ -17,8 +17,9 @@ export class LoginComponent implements OnInit {
   }
   tabIndex = 0;
   loginForm!: FormGroup;
-  constructor(private _fb: FormBuilder) {
-  }
+  message!: string;
+  showBanner: boolean = true;
+  constructor(private _fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -43,9 +44,25 @@ export class LoginComponent implements OnInit {
 
   handleLogin() {
     const data = this.loginForm.getRawValue();
+    let error = true;
+
+    if (error) {
+      this.showBanner = true;
+      this.message = 'Invalido';
+    }
+
     console.log(
       '🚀 ~ file: login.component.ts ~ line 30 ~ LoginComponent ~ handleLogin ~ data',
       data
     );
+  }
+
+  handleBanner(event: any) {
+    console.log(
+      '🚀 ~ file: login.component.ts ~ line 53 ~ LoginComponent ~ handleBanner ~ event',
+      event
+    );
+    this.message = '';
+    this.showBanner = false;
   }
 }
