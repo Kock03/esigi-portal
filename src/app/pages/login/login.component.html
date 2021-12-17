@@ -1,4 +1,9 @@
 <div id="login-page" fxFlex="100">
+  <app-banner
+    [message]="message"
+    [showBanner]="showBanner"
+    (handleCheck)="handleBanner($event)"
+  ></app-banner>
   <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="30">
     <div
       class="login-box"
@@ -65,7 +70,13 @@
                 >
               </mat-form-field>
             </p>
-            <button class="envolti-btn w-100" mat-raised-button [disabled]="loginForm.invalid">Entrar</button>
+            <button
+              class="envolti-btn w-100"
+              mat-raised-button
+              [disabled]="loginForm.invalid"
+            >
+              Entrar
+            </button>
           </form>
         </div>
       </div>
@@ -79,10 +90,3 @@
     fxShow.gt-sm
   ></div>
 </div>
-
-
-
-
-
-
-

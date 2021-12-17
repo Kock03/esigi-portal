@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 
 import { MatButtonModule } from '@angular/material/button';
+import { BannerModule } from './components/banner/banner.module';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
@@ -20,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
     FlexLayoutModule,
     MatFormFieldModule,
     FormsModule,
+    BannerModule,
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,

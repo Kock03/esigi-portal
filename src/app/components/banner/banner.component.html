@@ -1,0 +1,17 @@
+<div
+  id="banner"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+  *ngIf="showBanner"
+>
+  <div fxFlex='100' fxLayoutAlign="start center">
+    <mat-icon style="color: #e91717;">warning</mat-icon>
+    <!-- <img src="../../../assets/icons/warning_black_24dp.svg" alt="alert" class="alert" style="color: red;"/> -->
+    <p class="no-margin">  {{ message }} </p>
+  </div>
+  <div>
+    <button (click)="hideBanner()" mat-button>OK</button>
+</div>
+</div>
+
+
