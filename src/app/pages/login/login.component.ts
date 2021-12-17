@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
         ],
       ],
     });
+    this.handleLogin()
   }
 
   checkMethod(event: any) {
@@ -48,7 +49,7 @@ export class LoginComponent implements OnInit {
 
     if (error) {
       this.showBanner = true;
-      this.message = 'Invalido';
+      this.message = 'Ops!E-mail e/ou senha inválidos.Tente novamente.';
     }
 
     console.log(

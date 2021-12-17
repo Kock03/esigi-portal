@@ -1,5 +1,7 @@
 #banner {
-  background-color: #90beba;
+  background-color: white;
+  border-style: groove;
+  border-width: 2px;
   width: 100%;
   max-width: 800px;
   position: fixed;
@@ -11,4 +13,22 @@
   right: 0;
   color: black;
   border-radius: 10px;
+  border-color:#E30F10 ;
+  padding: 10px;
 }
+
+p{
+  font-size:18px;
+  padding-left: 8px;
+}
+
+mat-icon{
+  margin: 8px;
+
+}
+.mat-button{
+  vertical-align: center;
+  margin-right: 0% !important;
+}
+
+
