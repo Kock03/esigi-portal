@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   tabIndex = 0;
   loginForm!: FormGroup;
   message!: string;
-  showBanner: boolean = true;
+  showBanner: boolean = false;
   constructor(private _fb: FormBuilder) {}
 
   ngOnInit(): void {
