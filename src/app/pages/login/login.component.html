@@ -1,32 +1,88 @@
 <div id="login-page" fxFlex="100">
-  <div fxLayout="column" fxFlex="30">
-    <div class="login-box">
+  <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="30">
+    <div
+      class="login-box"
+      [ngClass.sm]="'login-box-mobile'"
+      [ngClass.xs]="'login-box-mobile'"
+    >
       <img src="../../../assets/logo/logoEnvolti.png" alt="logo" class="logo" />
 
       <div class="login-wrapper">
         <h2 class="no-margin">Faça seu login</h2>
         <p></p>
         <p>Acesse o portal com seu usuário e sua senha</p>
-      </div>
-      <div class="login-form">
-        <div fxLayout="column" fxLayoutAlign="space-around start" ></div>
-          <p>
-            <mat-form-field appearance="outline">
-              <mat-label>Usuário</mat-label>
-              <input matInput placeholder="email" />
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="outline">
-              <mat-label>Senha</mat-label>
-              <input matInput placeholder="senha" />
-            </mat-form-field>
-          </p>
+
+        <div class="login-form">
+          <form
+            [formGroup]="loginForm"
+            fxLayout="column"
+            (submit)="handleLogin()"
+          >
+            <p>
+              <mat-form-field class="input" appearance="outline">
+                <mat-label>Usuário</mat-label>
+                <input matInput formControlName="mail" placeholder="email" />
+                <mat-error
+                  *ngIf="
+                    loginForm && loginForm.controls['mail'].hasError('email')
+                  "
+                >
+                  E-mail inválido</mat-error
+                >
+                <mat-error
+                  *ngIf="
+                    loginForm && loginForm.controls['mail'].hasError('required')
+                  "
+                >
+                  Campo e-mail é orbrigatório
+                </mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input
+                  matInput
+                  formControlName="password"
+                  type="password"
+                  placeholder="senha"
+                />
+                <mat-error
+                  *ngIf="
+                    loginForm &&
+                    loginForm.controls['password'].hasError('minlength')
+                  "
+                >
+                  Senha muito pequena</mat-error
+                >
+                <mat-error
+                  *ngIf="
+                    loginForm &&
+                    loginForm.controls['password'].hasError('maxlength')
+                  "
+                >
+                  Senha muito grande</mat-error
+                >
+              </mat-form-field>
+            </p>
+            <button class="envolti-btn w-100" mat-raised-button [disabled]="loginForm.invalid">Entrar</button>
+          </form>
         </div>
-        <div fxLayoutAlign="start" fxLayout="column">
-          <button mat-raised-button>Entrar</button>
-        </div>
       </div>
+    </div>
   </div>
-  <div fxFlex="70" class="img-box" fxLayoutAlign="center center" fxHide  fxShow.gt-sm ></div>
+  <div
+    fxFlex="70"
+    class="img-box"
+    fxLayoutAlign="center center"
+    fxHide
+    fxShow.gt-sm
+  ></div>
 </div>
+
+
+
+
+
+
+
