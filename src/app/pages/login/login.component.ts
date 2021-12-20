@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
         ],
       ],
     });
-    this.handleLogin()
   }
 
   checkMethod(event: any) {
