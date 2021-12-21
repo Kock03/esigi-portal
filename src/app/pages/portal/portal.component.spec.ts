@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PotalSystemComponent } from './potal-system.component';
+import { PortalComponent } from './portal.component';
 
-describe('PotalSystemComponent', () => {
-  let component: PotalSystemComponent;
-  let fixture: ComponentFixture<PotalSystemComponent>;
+describe('PortalComponent', () => {
+  let component: PortalComponent;
+  let fixture: ComponentFixture<PortalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PotalSystemComponent ]
+      declarations: [ PortalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PotalSystemComponent);
+    fixture = TestBed.createComponent(PortalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

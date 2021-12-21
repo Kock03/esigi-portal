@@ -11,12 +11,13 @@ import { MatInputModule } from '@angular/material/input';
 
 import { MatButtonModule } from '@angular/material/button';
 import { BannerModule } from './components/banner/banner.module';
-import { PotalSystemComponent } from './pages/potal-system/potal-system.component';
 import { ServiceModule } from './services/services.module';
 import { HttpClientModule } from '@angular/common/http';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { PortalComponent } from './pages/portal/portal.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PotalSystemComponent],
+  declarations: [AppComponent, LoginComponent,PortalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

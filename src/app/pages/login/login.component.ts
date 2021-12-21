@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { validateBasis } from '@angular/flex-layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/user.service';
 import { environment } from 'src/environments/environment';
 import { AuthService } from 'src/providers/auth.provider';
 import { UsersProvider } from 'src/providers/user.provider';
+// import { Input} from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ import { UsersProvider } from 'src/providers/user.provider';
   encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
+  // @Input('showTollbar') showTollbar!: boolean;
   form!: FormGroup;
   public get fb(): FormBuilder {
     return this._fb;
@@ -39,6 +41,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // this.showTollbar = false;
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: [
@@ -54,7 +57,7 @@ export class LoginComponent implements OnInit {
     const token = localStorage.getItem('token');
     if (token) {
       this.userService.auth(token);
-      this.router.navigate(['/']);
+      this.router.navigate(['/portal']);
     }
   }
 
@@ -64,6 +67,10 @@ export class LoginComponent implements OnInit {
       event
     );
   }
+
+  // handleTollBar(event: any): void {}: void {
+  //   this.showTollbar = false;
+  // }
 
   handleBanner(event: any): void {
     this.message = '';

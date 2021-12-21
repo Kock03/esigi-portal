@@ -1,0 +1,32 @@
+.mat-toolbar{
+    background-color:#753BBD ;
+    border-radius: 20px;
+    // width: 100%;
+    // max-width: 100%;
+    position: fixed;
+    z-index: 999;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 60px;
+    }
+
+.logoPortal {
+    // max-width: 240px;
+    // max-height: 120px;
+    max-width: 240px;
+    max-height: 140px;
+    }
+
+.padlockIcon{
+    margin-right: 20px;
+}
+
+.lockerIcon{
+    margin-right: 20px;
+}
+
+.logoutIcon{
+    margin-right: 20px;
+}

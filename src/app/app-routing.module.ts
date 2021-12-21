@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
+import { PortalComponent} from './pages/portal/portal.component';
+
 
 const routes: Routes = [
   {
@@ -9,6 +11,8 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'login', component: LoginComponent },
+  { path: 'portal', component: PortalComponent },
+ 
 ];
 
 @NgModule({
