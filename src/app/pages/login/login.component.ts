@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { validateBasis } from '@angular/flex-layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { environment } from 'src/environments/environment';
 import { AuthService } from 'src/providers/auth.provider';
@@ -33,7 +34,8 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private userService: UserService,
     private http: HttpClient,
-    private userProvider: UsersProvider
+    private userProvider: UsersProvider,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -48,6 +50,12 @@ export class LoginComponent implements OnInit {
         ],
       ],
     });
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.userService.auth(token);
+      this.router.navigate(['/']);
+    }
   }
 
   checkMethod(event: any) {
