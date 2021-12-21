@@ -1,6 +1,11 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { validateBasis } from '@angular/flex-layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/providers/auth.provider';
+import { UsersProvider } from 'src/providers/user.provider';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +14,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
+  form!: FormGroup;
   public get fb(): FormBuilder {
     return this._fb;
   }
@@ -18,12 +24,21 @@ export class LoginComponent implements OnInit {
   tabIndex = 0;
   loginForm!: FormGroup;
   message!: string;
-  showBanner: boolean = true;
-  constructor(private _fb: FormBuilder) {}
+  showBanner: boolean = false;
+  users = [];
+  isLoading: boolean = false;
+
+  constructor(
+    private _fb: FormBuilder,
+    private authService: AuthService,
+    private userService: UserService,
+    private http: HttpClient,
+    private userProvider: UsersProvider
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      mail: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: [
         '',
         [
@@ -33,37 +48,52 @@ export class LoginComponent implements OnInit {
         ],
       ],
     });
-    this.handleLogin()
   }
 
   checkMethod(event: any) {
     console.log(
-      '🚀 ~ file: login.component.ts ~ line 17 ~ LoginComponent ~ checkMethod ~ event',
+      '🚀 ~ file: login.component.ts ~ line 62 ~ LoginComponent ~ checkMethod ~ event',
       event
     );
   }
 
-  handleLogin() {
-    const data = this.loginForm.getRawValue();
-    let error = true;
+  handleBanner(event: any): void {
+    this.message = '';
+    this.showBanner = false;
+  }
 
-    if (error) {
+  async onSubmit(): Promise<void> {
+    const formData = this.loginForm.getRawValue();
+    const data = {
+      email: formData.email,
+      password: formData.password,
+    };
+
+    try {
+      const auth = await this.authService.login(data);
+      if (auth.token) {
+        this.isLoading = true;
+        this.userService.auth(auth.token);
+        console.log(auth);
+      }
+    } catch (error) {
+      console.log('ERROR 132' + error);
       this.showBanner = true;
       this.message = 'Ops!E-mail e/ou senha inválidos.Tente novamente.';
     }
-
-    console.log(
-      '🚀 ~ file: login.component.ts ~ line 30 ~ LoginComponent ~ handleLogin ~ data',
-      data
-    );
   }
 
-  handleBanner(event: any) {
-    console.log(
-      '🚀 ~ file: login.component.ts ~ line 53 ~ LoginComponent ~ handleBanner ~ event',
-      event
-    );
-    this.message = '';
-    this.showBanner = false;
+  async getCSRF(token: string) {
+    let headers = new HttpHeaders();
+    headers = headers.append('Authorization', 'Bearer ' + token);
+    const csrf = await this.http
+      .get(environment.baseUrl + 'token', { headers: headers })
+      .subscribe((response) => {
+        console.log(
+          '🚀 ~ file: login.component.ts ~ line 135 ~ LoginComponent ~ getCSRF ~ csrf',
+          response
+        );
+      });
+    return csrf;
   }
 }
