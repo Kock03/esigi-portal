@@ -1,16 +1,2 @@
-    <mat-toolbar *ngIf="showMenu" color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <!-- <mat-icon>menu</mat-icon> -->
-      </button>
-      <img src="../../../assets/logo/WhiteLogoEnvolti.png" alt="logoPortal" class="logoPortal" />
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <input type="image" src="../../../assets/icons/account-icon.svg" alt="padlockIcon" class="padlockIcon" />
-        <input type="image" src="../../../assets/icons/account-icon.svg" alt="lockerIcon" class="lockerIcon"/>
-        <input type="image" src="../../../assets/icons/account-icon.svg" alt="logoutIcon" class="logoutIcon"/>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <!-- <mat-icon>share</mat-icon> -->
-      </button>
-    </mat-toolbar>
+<app-toolbar [showMenu]="showMenu"></app-toolbar>
 <router-outlet></router-outlet>
