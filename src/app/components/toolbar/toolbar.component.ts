@@ -12,3 +12,12 @@ export class ToolbarComponent implements OnInit {
 
   ngOnInit(): void {}
 }
+// showToolbar(event) {
+//   if (event === false) {
+//     this.visible = false;
+//   } else if (event === true) {
+//     this.visible = true;
+//   } else {
+//     this.visible = this.visible;
+//   }
+// }
