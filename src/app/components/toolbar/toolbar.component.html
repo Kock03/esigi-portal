@@ -1,8 +1,16 @@
-<mat-toolbar *ngIf="showMenu" class="toolbar">
-  <img
+<mat-toolbar *ngIf="showMenu" class="toolbar" fxLayoutAlign="space-between center">
+  <div>
+    <img
     src="../../../assets/logo/WhiteLogoEnvolti.png"
     alt="logoPortal"
-  />
-  <span class="example-spacer"></span>
+    />
+    <span class="example-spacer"></span>
+  </div>
+    
+  <div class="icons" fxLayout="row" fxLayoutAlign="space-around center" >
+    <mat-icon style="color: rgb(255, 255, 255)">person</mat-icon>
+    <mat-icon style="color:  rgb(255, 255, 255)">lock</mat-icon>
+    <mat-icon style="color:  rgb(255, 255, 255)">logout</mat-icon>
+  </div>
 </mat-toolbar>
 

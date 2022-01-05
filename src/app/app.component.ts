@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EnvironmentService } from './services/environment.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,11 @@ export class AppComponent {
   title = 'esigi-portal';
   showMenu = true;
 
-ngOnInit(): void {
-  console.log("🚀 ~ file: app.component.ts ~ line 15 ~ AppComponent ~ ngOnInit ~ location", location)
-  if(location.pathname === '/login')
-  {
-    this.showMenu = false;
+  constructor(private environmentService: EnvironmentService) {}
+  ngOnInit(): void {
+    this.environmentService.showMenu.subscribe((res) => {
+      console.log("🚀 ~ file: app.component.ts ~ line 16 ~ AppComponent ~ this.environmentService.showMenu.subscribe ~ res", res)
+      this.showMenu = res;
+    });
   }
 }
-
-}
-

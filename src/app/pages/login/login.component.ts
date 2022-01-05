@@ -3,6 +3,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { validateBasis } from '@angular/flex-layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { EnvironmentService } from 'src/app/services/environment.service';
 import { UserService } from 'src/app/services/user.service';
 import { environment } from 'src/environments/environment';
 import { AuthService } from 'src/providers/auth.provider';
@@ -37,8 +38,11 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private http: HttpClient,
     private userProvider: UsersProvider,
-    private router: Router
-  ) {}
+    private router: Router,
+    private environmentService: EnvironmentService
+  ) {
+    this.environmentService.setShowMenu(false);
+    }
 
   ngOnInit(): void {
     // this.showTollbar = false;
@@ -98,17 +102,4 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  async getCSRF(token: string) {
-    let headers = new HttpHeaders();
-    headers = headers.append('Authorization', 'Bearer ' + token);
-    const csrf = await this.http
-      .get(environment.baseUrl + 'token', { headers: headers })
-      .subscribe((response) => {
-        console.log(
-          '🚀 ~ file: login.component.ts ~ line 135 ~ LoginComponent ~ getCSRF ~ csrf',
-          response
-        );
-      });
-    return csrf;
-  }
 }

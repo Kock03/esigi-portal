@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { PortalComponent } from './pages/portal/portal.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     MatButtonModule,
     HttpClientModule,
     MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
