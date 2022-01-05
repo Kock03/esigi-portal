@@ -93,7 +93,7 @@ export class LoginComponent implements OnInit {
       if (auth.token) {
         this.isLoading = true;
         this.userService.auth(auth.token);
-        console.log(auth);
+        this.router.navigate(['/portal']);
       }
     } catch (error) {
       console.log('ERROR 132' + error);

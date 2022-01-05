@@ -7,10 +7,19 @@
     <span class="example-spacer"></span>
   </div>
     
-  <div class="icons" fxLayout="row" fxLayoutAlign="space-around center" >
-    <mat-icon style="color: rgb(255, 255, 255)">person</mat-icon>
-    <mat-icon style="color:  rgb(255, 255, 255)">lock</mat-icon>
-    <mat-icon style="color:  rgb(255, 255, 255)">logout</mat-icon>
+  <div fxLayout="row" >
+
+    <button mat-icon-button   disabled>
+      <mat-icon >person</mat-icon>
+    </button>
+
+    <button mat-icon-button   disabled>
+      <mat-icon >lock</mat-icon>
+    </button>
+
+    <button mat-icon-button (click)=logout()>
+      <mat-icon style="color: white">logout</mat-icon>
+    </button>
   </div>
 </mat-toolbar>
 

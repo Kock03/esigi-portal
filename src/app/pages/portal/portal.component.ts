@@ -8,7 +8,9 @@ import { EnvironmentService } from 'src/app/services/environment.service';
 })
 export class PortalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private environmentService: EnvironmentService) {
+    this.environmentService.setShowMenu(true);
+   }
 
   ngOnInit(): void {
   }

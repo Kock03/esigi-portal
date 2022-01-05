@@ -7,7 +7,8 @@ import { Subject } from 'rxjs';
 export class UserService {
   private loggedChanged = new Subject<boolean>();
   public isLogged = false;
-
+  constructor() {}
+  
   auth(token: any): void {
     localStorage.setItem('token', token);
     this.loggedChanged.next(true);
@@ -27,5 +28,5 @@ export class UserService {
     return this.loggedChanged;
   }
 
-  constructor() {}
+
 }
