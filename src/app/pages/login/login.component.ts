@@ -3,6 +3,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { validateBasis } from '@angular/flex-layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IProfile } from 'src/app/interfaces/iprofile';
 import { EnvironmentService } from 'src/app/services/environment.service';
 import { UserService } from 'src/app/services/user.service';
 import { environment } from 'src/environments/environment';
@@ -17,7 +18,6 @@ import { UsersProvider } from 'src/providers/user.provider';
   encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
-  // @Input('showTollbar') showTollbar!: boolean;
   form!: FormGroup;
   public get fb(): FormBuilder {
     return this._fb;
@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
   showBanner: boolean = false;
   users = [];
   isLoading: boolean = false;
+
 
   constructor(
     private _fb: FormBuilder,
@@ -59,9 +60,11 @@ export class LoginComponent implements OnInit {
     });
 
     const token = localStorage.getItem('token');
+   
     if (token) {
       this.userService.auth(token);
       this.router.navigate(['/portal']);
+   
     }
   }
 
@@ -72,9 +75,6 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  // handleTollBar(event: any): void {}: void {
-  //   this.showTollbar = false;
-  // }
 
   handleBanner(event: any): void {
     this.message = '';
@@ -94,6 +94,11 @@ export class LoginComponent implements OnInit {
         this.isLoading = true;
         this.userService.auth(auth.token);
         this.router.navigate(['/portal']);
+      
+      }
+      if(auth.profiles){
+        localStorage.setItem('profiles',  JSON.stringify(auth.profiles));
+      
       }
     } catch (error) {
       console.log('ERROR 132' + error);

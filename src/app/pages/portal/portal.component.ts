@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EnvironmentService } from 'src/app/services/environment.service';
+import { IProfile } from 'src/app/interfaces/iprofile'
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-portal',
@@ -7,12 +9,19 @@ import { EnvironmentService } from 'src/app/services/environment.service';
   styleUrls: ['./portal.component.scss']
 })
 export class PortalComponent implements OnInit {
+  profiles!: IProfile[]
 
-  constructor(private environmentService: EnvironmentService) {
+  constructor(private environmentService: EnvironmentService,  private _location: Location,) {
     this.environmentService.setShowMenu(true);
    }
 
   ngOnInit(): void {
+   this.getProfile()
+  }
+
+ getProfile(){
+     this.profiles =  JSON.parse(localStorage.getItem('profiles')!);
+    console.log(this.profiles[0].name);
   }
 
   openApp(port: number): void {
