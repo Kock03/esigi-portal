@@ -3,6 +3,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { validateBasis } from '@angular/flex-layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { IProfile } from 'src/app/interfaces/iprofile';
 import { EnvironmentService } from 'src/app/services/environment.service';
 import { UserService } from 'src/app/services/user.service';
@@ -40,7 +41,8 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private userProvider: UsersProvider,
     private router: Router,
-    private environmentService: EnvironmentService
+    private environmentService: EnvironmentService,
+    public translateService: TranslateService,
   ) {
     this.environmentService.setShowMenu(false);
     }
