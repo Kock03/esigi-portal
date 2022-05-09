@@ -1,19 +1,19 @@
 {
   "login": { 
-    "title_login": "Faça seu login",
-    "subtitle_login": "Acesse o portal com seu usuário e sua senha",
-    "user": "Usuário",
-    "password": "Senha",
-    "btn_login": "Entrar",
-    "error_small_password": "Senha muito pequena",
-    "error_long_password": "Senha muito grande",
-    "error_email_required": "Campo e-mail é obrigatório",
-    "error_email_invalid": "E-mail inválido"
+    "title_login": "Sign up",
+    "subtitle_login": "Access the portal with your username and password",
+    "user": "User",
+    "password": "Password",
+    "btn_login": "Login",
+    "error_small_password": "Password too small",
+    "error_long_password": "Password too big",
+    "error_email_required": "E-mail field is required",
+    "error_email_invalid": "E-mail is not valid"
     },
     "portal": {
-      "client_management": "Gestão de Clientes",
-      "people_management": " Gestão de Pessoas",
-      "project_management": "Gestão de Projetos",
-      "commercial": "Comercial"
+      "client_management": "Customer Management",
+      "people_management": "People Management",
+      "project_management": "Project Management",
+      "commercial": "Commercial"
     }
 }
