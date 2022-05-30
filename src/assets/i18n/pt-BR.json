@@ -1,0 +1,19 @@
+{
+  "login": { 
+    "title_login": "Faça seu login",
+    "subtitle_login": "Acesse o portal com seu usuário e sua senha",
+    "user": "Usuário",
+    "password": "Senha",
+    "btn_login": "Entrar",
+    "error_small_password": "Senha muito pequena",
+    "error_long_password": "Senha muito grande",
+    "error_email_required": "Campo e-mail é obrigatório",
+    "error_email_invalid": "E-mail inválido"
+    },
+    "portal": {
+      "client_management": "Gestão de Clientes",
+      "people_management": " Gestão de Pessoas",
+      "project_management": "Gestão de Projetos",
+      "commercial": "Comercial"
+    }
+}

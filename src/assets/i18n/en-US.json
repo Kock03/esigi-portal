@@ -1,0 +1,20 @@
+{
+    "login": { 
+      "title_login": "Sign up",
+      "subtitle_login": "Access the portal with your username and password",
+      "user": "User",
+      "password": "Password",
+      "btn_login": "Login",
+      "error_small_password": "Password too small",
+      "error_long_password": "Password too big",
+      "error_email_required": "E-mail field is required",
+      "error_email_invalid": "E-mail is not valid"
+      },
+      "portal": {
+        "client_management": "Customer Management",
+        "people_management": "People Management",
+        "project_management": "Project Management",
+        "commercial": "Commercial"
+      }
+  }
+  

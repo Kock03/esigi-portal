@@ -13,39 +13,40 @@
       <img src="../../../assets/logo/logoEnvolti.png" alt="logo" class="logo" />
 
       <div class="login-wrapper">
-        <h2 class="no-margin">Faça seu login</h2>
+        <h2 class="no-margin">{{ "login.title_login" | translate }}</h2>
         <p></p>
-        <p>Acesse o portal com seu usuário e sua senha</p>
+        <p>{{ "login.subtitle_login" | translate }}</p>
 
         <div class="login-form">
           <form
             [formGroup]="loginForm"
             fxLayout="column"
-            (submit)="handleLogin()"
+            (submit)="onSubmit()"
           >
             <p>
               <mat-form-field class="input" appearance="outline">
-                <mat-label>Usuário</mat-label>
-                <input matInput formControlName="mail" placeholder="email" />
+                <mat-label>{{ "login.user" | translate}}</mat-label>
+                <input matInput formControlName="email" placeholder="email" />
                 <mat-error
                   *ngIf="
-                    loginForm && loginForm.controls['mail'].hasError('email')
+                    loginForm && loginForm.controls['email'].hasError('email')
                   "
                 >
-                  E-mail inválido</mat-error
+                {{ "login.error_email_invalid" | translate }}</mat-error
                 >
                 <mat-error
                   *ngIf="
-                    loginForm && loginForm.controls['mail'].hasError('required')
+                    loginForm &&
+                    loginForm.controls['email'].hasError('required')
                   "
                 >
-                  Campo e-mail é orbrigatório
+                  {{ "login.error_email_required" | translate }}
                 </mat-error>
               </mat-form-field>
             </p>
             <p>
               <mat-form-field appearance="outline">
-                <mat-label>Senha</mat-label>
+                <mat-label>{{ "login.password" | translate }}</mat-label>
                 <input
                   matInput
                   formControlName="password"
@@ -58,7 +59,7 @@
                     loginForm.controls['password'].hasError('minlength')
                   "
                 >
-                  Senha muito pequena</mat-error
+                  {{ "login.error_small_password" | translate }}</mat-error
                 >
                 <mat-error
                   *ngIf="
@@ -66,7 +67,7 @@
                     loginForm.controls['password'].hasError('maxlength')
                   "
                 >
-                  Senha muito grande</mat-error
+                {{ "login.error_long_password" | translate }}</mat-error
                 >
               </mat-form-field>
             </p>
@@ -75,7 +76,7 @@
               mat-raised-button
               [disabled]="loginForm.invalid"
             >
-              Entrar
+            {{ "login.btn_login" | translate }}
             </button>
           </form>
         </div>
