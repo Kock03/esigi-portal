@@ -1,21 +1,30 @@
 <div #portal class="page">
-  <div class="portal-content" fxLayout="row wrap" fxLayoutAlign="center" >
-      <div class="box-management-purple" (click)="openApp(3501)">
+  <div class="portal-content" fxLayout="row" fxLayoutAlign="center" >
+      <div class="box-management-purple" (click)="openApp(3403)">
         <img src="../../../assets/icons/purple-rocket-icon.png" class="rocket-button" />
         <a>{{ "portal.client_management" | translate }}</a>
       </div>
-      <div class="box-management-blue" (click)="openApp(3503)">
+      <div class="box-management-blue" (click)="openApp(3401)">
         <img src="../../../assets/icons/blue-rocket-icon.png" class="rocket-button" />
         <a>{{ "portal.people_management" | translate }}</a>
       </div>
-      <div class="box-management-purple" (click)="openApp(3505)">
+      <div class="box-management-purple" (click)="openApp(3402)">
         <img src="../../../assets/icons/purple-rocket-icon.png"  class="rocket-button" />
         <a>{{ "portal.project_management" | translate }}</a>
       </div>
-      <div class="box-management-blue"  (click)="openApp(3507)">
-        <img src="../../../assets/icons/blue-rocket-icon.png" class="rocket-button" />
-        <a>{{ "portal.comercial" | translate }}</a>
+      <div class="box-management-purple" (click)="openApp(3405)">
+        <img src="../../../assets/icons/purple-rocket-icon.png" class="rocket-button" />
+        <a>Autorização</a>
       </div>
+      <div class="box-management-blue" (click)="openApp(3400)">
+        <img src="../../../assets/icons/blue-rocket-icon.png" class="rocket-button" />
+        <a>Autenticação</a>
+      </div>
+      <div class="box-management-purple" (click)="openApp(3404)">
+        <img src="../../../assets/icons/purple-rocket-icon.png"  class="rocket-button" />
+        <a>Configurações</a>
+      </div>
+      
       
   </div>
 </div>
