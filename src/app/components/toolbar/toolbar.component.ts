@@ -9,11 +9,15 @@ import { UserService } from '../../services/user.service';
 })
 export class ToolbarComponent implements OnInit {
   @Input('showMenu') showMenu!: boolean;
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   logout(): void {
     this.userService.logout();
+  }
+
+  openApp(): void {
+    location.replace(`http://localhost:3403/edit/novo`);
   }
 }
