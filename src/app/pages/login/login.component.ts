@@ -45,10 +45,11 @@ export class LoginComponent implements OnInit {
     public translateService: TranslateService,
   ) {
     this.environmentService.setShowMenu(false);
-    }
+  }
 
   ngOnInit(): void {
     // this.showTollbar = false;
+    localStorage.clear();
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: [
@@ -62,11 +63,11 @@ export class LoginComponent implements OnInit {
     });
 
     const token = localStorage.getItem('token');
-   
+
     if (token) {
       this.userService.auth(token);
       this.router.navigate(['/portal']);
-   
+
     }
   }
 
@@ -96,11 +97,11 @@ export class LoginComponent implements OnInit {
         this.isLoading = true;
         this.userService.auth(auth.token);
         this.router.navigate(['/portal']);
-      
+
       }
-      if(auth.profiles){
-        localStorage.setItem('profiles',  JSON.stringify(auth.profiles));
-      
+      if (auth.profiles) {
+        localStorage.setItem('profiles', JSON.stringify(auth.profiles));
+
       }
     } catch (error) {
       console.log('ERROR 132' + error);

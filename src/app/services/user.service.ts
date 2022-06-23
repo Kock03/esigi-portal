@@ -7,8 +7,8 @@ import { Subject } from 'rxjs';
 export class UserService {
   private loggedChanged = new Subject<boolean>();
   public isLogged = false;
-  constructor() {}
-  
+  constructor() { }
+
   auth(token: any): void {
     localStorage.setItem('token', token);
     this.loggedChanged.next(true);
@@ -21,7 +21,7 @@ export class UserService {
     // localStorage.removeItem('xsrfToken');
     this.loggedChanged.next(false);
     this.isLogged = false;
-    location.replace('/login');
+    location.replace('http://192.168.8.184:3406/login');
   }
 
   isUserLoggedIn(): Subject<boolean> {

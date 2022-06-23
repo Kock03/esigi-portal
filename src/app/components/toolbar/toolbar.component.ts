@@ -18,6 +18,6 @@ export class ToolbarComponent implements OnInit {
   }
 
   openApp(): void {
-    location.replace(`http://localhost:3403/edit/novo`);
+    location.replace(`http://192.168.8.184:3404/edit/novo`);
   }
 }
