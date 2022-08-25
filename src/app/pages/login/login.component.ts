@@ -84,30 +84,38 @@ export class LoginComponent implements OnInit {
     this.showBanner = false;
   }
 
-  async onSubmit(): Promise<void> {
-    const formData = this.loginForm.getRawValue();
-    const data = {
-      email: formData.email,
-      password: formData.password,
-    };
-
-    try {
-      const auth = await this.authService.login(data);
-      if (auth.token) {
-        this.isLoading = true;
-        this.userService.auth(auth.token);
-        this.router.navigate(['/portal']);
-
-      }
-      if (auth.profiles) {
-        localStorage.setItem('profiles', JSON.stringify(auth.profiles));
-
-      }
-    } catch (error) {
-      console.log('ERROR 132' + error);
-      this.showBanner = true;
-      this.message = 'Ops!E-mail e/ou senha inválidos.Tente novamente.';
-    }
+  buttonClick(){
+    this.loginForm.controls['email'].markAsTouched();
+    this.loginForm.controls['password'].markAsTouched();
   }
+
+  async onSubmit(): Promise<void> {
+    if(this.loginForm.valid){
+
+      const formData = this.loginForm.getRawValue();
+      const data = {
+        email: formData.email,
+        password: formData.password,
+      };
+  
+      try {
+        const auth = await this.authService.login(data);
+        if (auth.token) {
+          this.isLoading = true;
+          this.userService.auth(auth.token);
+          this.router.navigate(['/portal']);
+  
+        }
+        if (auth.profiles) {
+          localStorage.setItem('profiles', JSON.stringify(auth.profiles));
+  
+        }
+      } catch (error) {
+        console.log('ERROR 132' + error);
+        this.showBanner = true;
+        this.message = 'Ops!E-mail e/ou senha inválidos.Tente novamente.';
+      }
+    }
+    }
 
 }

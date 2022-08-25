@@ -4,90 +4,81 @@
     [showBanner]="showBanner"
     (handleCheck)="handleBanner($event)"
   ></app-banner>
-  <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="30">
-    <div
-      class="login-box"
-      [ngClass.sm]="'login-box-mobile'"
-      [ngClass.xs]="'login-box-mobile'"
-    >
-      <img src="../../../assets/logo/logoEnvolti.png" alt="logo" class="logo" />
+  <div fxLayout="column" fxFlex="100">
+    <img
+      src="../../../assets/logo/WhiteLogoEnvolti.png"
+      alt="logo"
+      class="logo"
+    />
 
-      <div class="login-wrapper">
-        <h2 class="no-margin">{{ "login.title_login" | translate }}</h2>
-        <p></p>
-        <p>{{ "login.subtitle_login" | translate }}</p>
+    <div class="login-wrapper">
+      <h2 class="no-margin">{{ "login.title_login" | translate }}</h2>
+      <p class="login-text">{{ "login.subtitle_login" | translate }}</p>
 
-        <div class="login-form">
-          <form
-            [formGroup]="loginForm"
-            fxLayout="column"
-            (submit)="onSubmit()"
-          >
-            <p>
-              <mat-form-field class="input" appearance="outline">
-                <mat-label>{{ "login.user" | translate}}</mat-label>
-                <input matInput formControlName="email" placeholder="email" />
-                <mat-error
-                  *ngIf="
-                    loginForm && loginForm.controls['email'].hasError('email')
-                  "
-                >
+      <div class="login-form">
+        <form [formGroup]="loginForm" fxLayout="column" (submit)="onSubmit()">
+          <p class="form">
+            <mat-form-field class="input" appearance="outline">
+              <input
+                matInput
+                formControlName="email"
+                placeholder="{{ 'login.user' | translate }}"
+              />
+              <mat-error
+                *ngIf="
+                  loginForm && loginForm.controls['email'].hasError('email')
+                "
+              >
                 {{ "login.error_email_invalid" | translate }}</mat-error
-                >
-                <mat-error
-                  *ngIf="
-                    loginForm &&
-                    loginForm.controls['email'].hasError('required')
-                  "
-                >
-                  {{ "login.error_email_required" | translate }}
-                </mat-error>
-              </mat-form-field>
-            </p>
-            <p>
-              <mat-form-field appearance="outline">
-                <mat-label>{{ "login.password" | translate }}</mat-label>
-                <input
-                  matInput
-                  formControlName="password"
-                  type="password"
-                  placeholder="senha"
-                />
-                <mat-error
-                  *ngIf="
-                    loginForm &&
-                    loginForm.controls['password'].hasError('minlength')
-                  "
-                >
-                  {{ "login.error_small_password" | translate }}</mat-error
-                >
-                <mat-error
-                  *ngIf="
-                    loginForm &&
-                    loginForm.controls['password'].hasError('maxlength')
-                  "
-                >
+              >
+              <mat-error
+                *ngIf="
+                  loginForm && loginForm.controls['email'].hasError('required')
+                "
+              >
+                {{ "login.error_email_required" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </p>
+          <p class="form">
+            <mat-form-field class="input" appearance="outline">
+              <input
+                matInput
+                formControlName="password"
+                type="password"
+                placeholder="{{ 'login.password' | translate }}"
+              />
+              <mat-error
+                *ngIf="
+                  loginForm &&
+                  loginForm.controls['password'].hasError('required')
+                "
+              >
+                {{ "login.error_email_required" | translate }}
+              </mat-error>
+              <mat-error
+                *ngIf="
+                  loginForm &&
+                  loginForm.controls['password'].hasError('minlength')
+                "
+              >
+                {{ "login.error_small_password" | translate }}</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  loginForm &&
+                  loginForm.controls['password'].hasError('maxlength')
+                "
+              >
                 {{ "login.error_long_password" | translate }}</mat-error
-                >
-              </mat-form-field>
-            </p>
-            <button
-              class="envolti-btn w-100"
-              mat-raised-button
-              [disabled]="loginForm.invalid"
-            >
+              >
+            </mat-form-field>
+          </p>
+          <button (click)="buttonClick()" class="w-100" mat-raised-button>
             {{ "login.btn_login" | translate }}
-            </button>
-          </form>
-        </div>
+          </button>
+        </form>
       </div>
     </div>
   </div>
-  <div
-    fxFlex="70"
-    class="img-box"
-    fxLayoutAlign="center center"
-    fxHide
-    fxShow.gt-sm
-  ></div>
 </div>

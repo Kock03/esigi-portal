@@ -1,44 +1,47 @@
 #login-page {
   width: 100%;
-  .login-box {
-    width: 400px;
-    margin-left: 15%;
-    margin-top: 10%;
+  background-image: url(../../../assets/logo/esigi-login.png);
+  background-color: #32065B;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh !important;
+
+  .login-text {
+    margin-top: 30px;
+    font-size: 19.7px;
+    margin-bottom: 30px;
+    color: #fff !important;
   }
 
-  .login-box-mobile {
-    margin: auto;
-    margin-top: 10%;
-    width: 80% !important;
-    .login-wrapper {
-      margin-top: 30%;
-    }
-  }
 
   .login-wrapper {
-    margin-top: 36%;
+    margin-left: 10%;
+    margin-top: 12%;
+
     h2 {
-      font-size: 36px;
+      color: #fff !important;
+      font-size: 62px;
       font-weight: bold;
     }
-  }
 
-  .example-label {
-    top: 498px;
-    left: 136px;
-    width: 520px;
-    height: 77px;
+    .form {
+      font-size: 20px;
+      height: 100px;
+    }
   }
 
   .login-form {
-    margin-top: 10%;
     width: 100%;
   }
 
   .logo {
-    max-width: 180px;
-    max-height: 80px;
-    margin-top: 10%;
+    margin-top: 20px;
+    margin-left: 9.5%;
+    width: 100%;
+    max-width: 150px;
+    max-height: 200px;
   }
 
   .mat-form-field {
@@ -50,22 +53,69 @@
   }
 
   .mat-raised-button {
-    background-color: #8538c2;
+    background-color: #961AB0;
     text-align: center;
     color: white;
-    width: 124%;
+    width: 100%;
+    max-width: 400px;
     margin-left: 15%;
+    border-radius: 13px;
     height: 48px;
+    border: 1px solid #8538c2;
     margin: 0%;
   }
 
-  .img-box {
-    background-image: url(../../../assets/background/imagem-login.png) !important;
-    background-color: var(--dark-bg-secondary) !important;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh !important;
+
+
+  .input {
+    color: #fff !important;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    max-height: 200px;
   }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #fff !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #fff !important;
+  }
+
+  .mat-form-field-outline-start {
+    border-radius: 20px 0 0 20px !important;
+    min-width: 28px !important;
+  }
+
+  .mat-form-field-outline-end {
+    border-radius: 0 20px 20px 0 !important;
+  }
+
+  .mat-input-placeholder-wrapper {
+    top: -1em;
+  }
+
+  .mat-input-element {
+    margin-bottom: 7px !important;
+  }
+
+
+  .mat-form-field-outline,
+  .mat-form-field-empty.mat-form-field-label,
+  .mat-form-field-label,
+  .mat-form-field-underline,
+  .mat-input-element,
+  ::placeholder {
+    color: white !important;
+  }
+
+
+
+  @media screen and (max-width: 1265px) {
+    background-image: none;
+
+  }
+
+
 }
