@@ -26,17 +26,17 @@
             <p>
               <mat-form-field class="input" appearance="outline">
                 <mat-label>Usuário</mat-label>
-                <input matInput formControlName="mail" placeholder="email" />
+                <input matInput formControlName="email" placeholder="email" />
                 <mat-error
                   *ngIf="
-                    loginForm && loginForm.controls['mail'].hasError('email')
+                    loginForm && loginForm.controls['email'].hasError('email')
                   "
                 >
                   E-mail inválido</mat-error
                 >
                 <mat-error
                   *ngIf="
-                    loginForm && loginForm.controls['mail'].hasError('required')
+                    loginForm && loginForm.controls['email'].hasError('required')
                   "
                 >
                   Campo e-mail é orbrigatório
