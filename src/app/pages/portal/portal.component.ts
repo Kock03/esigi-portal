@@ -3,6 +3,7 @@ import { EnvironmentService } from 'src/app/services/environment.service';
 import { IProfile } from 'src/app/interfaces/iprofile'
 import { Location } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-portal',
@@ -12,18 +13,18 @@ import { TranslateService } from '@ngx-translate/core';
 export class PortalComponent implements OnInit {
   profiles!: IProfile[]
 
-  constructor(private environmentService: EnvironmentService,  private _location: Location, public translateService: TranslateService,) {
+  constructor(private environmentService: EnvironmentService,  private _location: Location, public translateService: TranslateService,private router: Router,) {
     this.environmentService.setShowMenu(true);
    }
 
   ngOnInit(): void {
-   this.getProfile()
+  //  this.getProfile()
   }
 
- getProfile(){
-     this.profiles =  JSON.parse(localStorage.getItem('profiles')!);
-    console.log(this.profiles[0].name);
-  }
+//  getProfile(){
+//      this.profiles =  JSON.parse(localStorage.getItem('profiles')!);
+//     console.log(this.profiles[0].name);
+//   }
 
   openApp(port: number): void {
     location.replace(`http://localhost:${port}`);

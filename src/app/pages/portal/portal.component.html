@@ -1,30 +1,36 @@
 <div #portal class="page">
-  <div class="portal-content" fxLayout="row" fxLayoutAlign="center" >
-      <div class="box-management-purple" (click)="openApp(3403)">
-        <img src="../../../assets/icons/purple-rocket-icon.png" class="rocket-button" />
-        <a>{{ "portal.client_management" | translate }}</a>
-      </div>
-      <div class="box-management-blue" (click)="openApp(3401)">
-        <img src="../../../assets/icons/blue-rocket-icon.png" class="rocket-button" />
-        <a>{{ "portal.people_management" | translate }}</a>
-      </div>
-      <div class="box-management-purple" (click)="openApp(3402)">
-        <img src="../../../assets/icons/purple-rocket-icon.png"  class="rocket-button" />
-        <a>{{ "portal.project_management" | translate }}</a>
-      </div>
-      <div class="box-management-purple" (click)="openApp(3405)">
-        <img src="../../../assets/icons/purple-rocket-icon.png" class="rocket-button" />
-        <a>Autorização</a>
-      </div>
-      <div class="box-management-blue" (click)="openApp(3400)">
-        <img src="../../../assets/icons/blue-rocket-icon.png" class="rocket-button" />
-        <a>Autenticação</a>
-      </div>
-      <div class="box-management-purple" (click)="openApp(3404)">
-        <img src="../../../assets/icons/purple-rocket-icon.png"  class="rocket-button" />
-        <a>Configurações</a>
-      </div>
-      
-      
+  <div class="content-scroll">
+  <div class="group-box-superior"  fxLayout="row" fxLayoutAlign="space-around center"  >
+    <img
+    class="img"
+    src="../assets/icons/1.png"
+    (click)="openApp(3403)"
+  />
+  <img
+    class="img"
+    src="../assets/icons/2.png"
+    (click)="openApp(3401)"
+  />
+  <img
+    class="img"
+    src="../assets/icons/3.png"
+    (click)="openApp(3402)"
+  />
   </div>
+  <div  class="group-box-bottom" fxLayout="row" fxLayoutAlign="space-around center"  >
+    <img
+    class="img"
+    src="../assets/icons/4.png"
+    (click)="openApp(3405)"
+  />
+  <img
+    class="img"
+    src="../assets/icons/5.png"
+    (click)="openApp(3400)"
+  />
+  <img
+  class="img"
+  src="../assets/icons/6.png"
+  (click)="openApp(3404)"
+/>
 </div>
