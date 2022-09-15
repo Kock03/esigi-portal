@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { validateBasis } from '@angular/flex-layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { IProfile } from 'src/app/interfaces/iprofile';
@@ -19,6 +20,9 @@ import { UsersProvider } from 'src/providers/user.provider';
   encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
+  activeMenu!: '';
+  @ViewChild(MatSidenav)
+  sidenav!: MatSidenav;
   form!: FormGroup;
   public get fb(): FormBuilder {
     return this._fb;

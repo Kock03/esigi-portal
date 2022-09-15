@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { EnvironmentService } from './services/environment.service';
 import { UserService } from './services/user.service';
@@ -12,11 +12,15 @@ import { BreakpointObserver, LayoutModule } from '@angular/cdk/layout';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  @Input('showMenu') showMenu!: boolean;
   activeMenu!: '';
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
   title = 'esigi-portal';
-  showMenu = true;
+  // showMenu = true;
+  showNav: boolean = true;
+  // activeUrl!: any
+  
 
   collaboratorId!: string | null;
   openTree: boolean = false;
@@ -33,13 +37,16 @@ export class AppComponent {
     public translateService: TranslateService,
     private userService: UserService,
     private router: Router,
+    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
   ) {
     translateService.addLangs(['en-US', 'pt-BR']);
   }
   ngOnInit(): void {
-    // if(this.router.url === '/login'){
-
-    //   this.sidenav.close();
+    // if(this.route.url === '/login'){
+    // console.log("🚀 ~ file: app.component.ts ~ line 42 ~ AppComponent ~ ngOnInit ~ this.router.url ", this.route.snapshot )
+    // this.activeUrl = this.activatedRoute.Observable<UrlSegment[];
+      // this.sidenav.close();
     // }
     this.translateService.setDefaultLang('pt-BR');
     this.translateService.use('pt-BR');
