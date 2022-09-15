@@ -29,6 +29,7 @@ export class PortalComponent implements OnInit {
   openTree: boolean = false;
   compare!: any
 
+  customer: string = 'cliente';
   collaborator: string = 'colaborador';
   jobs: string = 'vaga';
   resume: string = 'curriculo';
@@ -88,6 +89,9 @@ export class PortalComponent implements OnInit {
   navigator(route: any) {
     console.log("🚀 ~ file: app.component.ts ~ line 79 ~ AppComponent ~ navigator ~ route", route)
     switch (route) {
+      case 'cliente':
+        this.router.navigate(['cliente/lista']);
+        break;
       case 'colaborador':
         this.router.navigate(['colaborador/lista']);
         break;
@@ -100,7 +104,6 @@ export class PortalComponent implements OnInit {
         case 'login':
           this.sidenav.close();
         break;
-
     }
   }
 
