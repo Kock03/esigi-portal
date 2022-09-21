@@ -1,30 +1,70 @@
-<div #portal class="page">
-  <div class="portal-content" fxLayout="row" fxLayoutAlign="center" >
-      <div class="box-management-purple" (click)="openApp(3403)">
-        <img src="../../../assets/icons/purple-rocket-icon.png" class="rocket-button" />
-        <a>{{ "portal.client_management" | translate }}</a>
-      </div>
-      <div class="box-management-blue" (click)="openApp(3401)">
-        <img src="../../../assets/icons/blue-rocket-icon.png" class="rocket-button" />
-        <a>{{ "portal.people_management" | translate }}</a>
-      </div>
-      <div class="box-management-purple" (click)="openApp(3402)">
-        <img src="../../../assets/icons/purple-rocket-icon.png"  class="rocket-button" />
-        <a>{{ "portal.project_management" | translate }}</a>
-      </div>
-      <div class="box-management-purple" (click)="openApp(3405)">
-        <img src="../../../assets/icons/purple-rocket-icon.png" class="rocket-button" />
-        <a>Autorização</a>
-      </div>
-      <div class="box-management-blue" (click)="openApp(3400)">
-        <img src="../../../assets/icons/blue-rocket-icon.png" class="rocket-button" />
-        <a>Autenticação</a>
-      </div>
-      <div class="box-management-purple" (click)="openApp(3404)">
-        <img src="../../../assets/icons/purple-rocket-icon.png"  class="rocket-button" />
-        <a>Configurações</a>
-      </div>
-      
-      
+<mat-toolbar fxLayoutAlign="space-between center">
+  <div fxLayout="row">
+    <img class="menu-button-logo" src="../assets/logo/logo-envolti-branca-roxo.png" alt="" />
+    <button mat-button class="menu-button-logout" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>{{ "Logout" }}</span>
+    </button>
   </div>
-</div>
+  <div>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8"
+    [ngStyle]="(openTree && { width: '100px' }) || { width: '250px' }">
+    <img *ngIf="openTree != true" [ngStyle]="
+      (openTree && { 'margin-top': '10px' }) || { 'margin-top': '10px' }
+      " class="avatar mat-elevation-z8" src="../assets/icons/avatar-astronauta.png" />
+    <h2 *ngIf="openTree != true" class="name">Usuário</h2>
+    <p *ngIf="openTree != true" class="designation">Função</p>
+
+    <mat-divider *ngIf="openTree != true"></mat-divider>
+
+    <div class="design" [ngStyle]="
+      (openTree && { 'margin-top': '180px' }) || { 'margin-top': '10px' }
+      ">
+      <div class="btn-menu" [ngStyle]="
+        (openTree && { 'margin-left': '1px' }) || { 'margin-left': '20px' }
+        "></div>
+    
+      <div [ngStyle]="
+        (openTree && { 'margin-left': '1px' }) || { 'margin-left': '20px' }
+        ">
+        <button mat-flat-button class="menu-button-more" (click)="recize()" [ngStyle]="
+          (openTree && { 'margin-left': '5px' }) || { 'margin-right': '25px' }
+          ">
+          <mat-icon [ngStyle]="
+            (openTree && { 'margin-top': '635px' }) || {
+            'margin-top': '550px'
+            }
+            ">more_horiz</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content [ngStyle]="
+    (openTree && { 'margin-left': '100px' }) || { 'margin-left': '250px' }
+    ">
+    <div class="content">
+      <div #portal class="page">
+        <div class="content-scroll">
+          <div class="group-box-superior" fxLayout="row" fxLayoutAlign="space-around center">
+            <img class="img" src="../assets/icons/1.png" (click)="openApp(3403)" />
+            <img class="img" src="../assets/icons/2.png" (click)="openApp(3401)" />
+            <img class="img" src="../assets/icons/3.png" (click)="openApp(3402)" />
+          </div>
+          <div class="group-box-bottom" fxLayout="row" fxLayoutAlign="space-around center">
+            <img class="img" src="../assets/icons/4.png" (click)="openApp(3405)" />
+            <img class="img" src="../assets/icons/5.png" (click)="openApp(3400)" />
+            <img class="img" src="../assets/icons/6.png" (click)="openApp(3404)" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

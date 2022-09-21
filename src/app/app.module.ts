@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatListModule} from '@angular/material/list';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
+// import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PortalComponent } from './pages/portal/portal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -27,7 +27,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
     AppComponent,
     LoginComponent,
     PortalComponent,
-    ToolbarComponent,
+    // ToolbarComponent,
   ],
   imports: [
     BrowserModule,
