@@ -22,7 +22,6 @@ export class PortalComponent implements OnInit {
 
  getProfile(){
      this.profiles =  JSON.parse(localStorage.getItem('profiles')!);
-    console.log(this.profiles[0].name);
   }
 
   openApp(port: number): void {
