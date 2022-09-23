@@ -76,10 +76,7 @@ export class LoginComponent implements OnInit {
   }
 
   checkMethod(event: any) {
-    console.log(
-      '🚀 ~ file: login.component.ts ~ line 62 ~ LoginComponent ~ checkMethod ~ event',
-      event
-    );
+
   }
 
 
