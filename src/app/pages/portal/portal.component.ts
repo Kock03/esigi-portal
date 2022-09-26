@@ -1,20 +1,21 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { EnvironmentService } from 'src/app/services/environment.service';
-import { IProfile } from 'src/app/interfaces/iprofile'
+import { IProfile } from 'src/app/interfaces/iprofile';
 import { Location } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { UserService } from 'src/app/services/user.service';
 import { MatSidenav } from '@angular/material/sidenav';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-portal',
   templateUrl: './portal.component.html',
-  styleUrls: ['./portal.component.scss']
+  styleUrls: ['./portal.component.scss'],
 })
 export class PortalComponent implements OnInit {
-  profiles!: IProfile[]
+  profiles!: IProfile[];
   @Input('showMenu') showMenu!: boolean;
   activeMenu!: '';
   @ViewChild(MatSidenav)
@@ -24,28 +25,37 @@ export class PortalComponent implements OnInit {
   showNav: boolean = true;
   // activeUrl!: any
 
-
   collaboratorId!: string | null;
   openTree: boolean = false;
-  compare!: any
+  compare!: any;
 
   customer: string = 'cliente';
   collaborator: string = 'colaborador';
   jobs: string = 'vaga';
   resume: string = 'curriculo';
-  portal: string = 'login'
+  portal: string = 'login';
 
-  constructor(private environmentService: EnvironmentService, private _location: Location, public translateService: TranslateService, private router: Router, private observer: BreakpointObserver,
-    private userService: UserService,
+  token!: string;
+
+  constructor(
+    private environmentService: EnvironmentService,
+    private _location: Location,
+    public translateService: TranslateService,
+    private router: Router,
+    private observer: BreakpointObserver,
+    private userService: UserService
   ) {
     this.environmentService.setShowMenu(true);
   }
 
   ngOnInit(): void {
+    this.token = localStorage.getItem('token')!;
+    if (!this.token) {
+      location.replace(environment.portal);
+    }
     this.translateService.setDefaultLang('pt-BR');
     this.translateService.use('pt-BR');
     this.environmentService.showMenu.subscribe((res) => {
-
       this.showMenu = res;
     });
     //  this.getProfile()
@@ -55,7 +65,6 @@ export class PortalComponent implements OnInit {
   //      this.profiles =  JSON.parse(localStorage.getItem('profiles')!);
   //     console.log(this.profiles[0].name);
   //   }
-
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -67,13 +76,11 @@ export class PortalComponent implements OnInit {
           this.sidenav.mode = 'side';
           this.sidenav.open();
         }
-      }
-      );
+      });
     }, 50);
   }
 
   recize() {
-
     this.openTree = this.openTree === true ? false : true;
   }
 
@@ -82,12 +89,10 @@ export class PortalComponent implements OnInit {
   }
 
   openApp(port: number): void {
-    location.replace(`http://localhost:${port}`);
+    location.replace(`http://localhost:${port}/validate/${this.token}`);
   }
 
-
   navigator(route: any) {
-    console.log("🚀 ~ file: app.component.ts ~ line 79 ~ AppComponent ~ navigator ~ route", route)
     switch (route) {
       case 'cliente':
         this.router.navigate(['cliente/lista']);
@@ -99,10 +104,10 @@ export class PortalComponent implements OnInit {
         this.router.navigate(['vaga/lista']);
         break;
       case 'curriculo':
-        this.router.navigate(['curriculo/lista']); 
+        this.router.navigate(['curriculo/lista']);
         break;
-        case 'login':
-          this.sidenav.close();
+      case 'login':
+        this.sidenav.close();
         break;
     }
   }
@@ -110,5 +115,4 @@ export class PortalComponent implements OnInit {
   logout(): void {
     this.userService.logout();
   }
-
 }

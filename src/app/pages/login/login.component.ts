@@ -107,10 +107,6 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/portal']);
   
         }
-        if (auth.profiles) {
-          localStorage.setItem('profiles', JSON.stringify(auth.profiles));
-  
-        }
       } catch (error) {
         console.log('ERROR 132' + error);
         this.showBanner = true;
