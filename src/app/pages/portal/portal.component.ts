@@ -92,26 +92,6 @@ export class PortalComponent implements OnInit {
     location.replace(`http://localhost:${port}/validate/${this.token}`);
   }
 
-  navigator(route: any) {
-    switch (route) {
-      case 'cliente':
-        this.router.navigate(['cliente/lista']);
-        break;
-      case 'colaborador':
-        this.router.navigate(['colaborador/lista']);
-        break;
-      case 'vaga':
-        this.router.navigate(['vaga/lista']);
-        break;
-      case 'curriculo':
-        this.router.navigate(['curriculo/lista']);
-        break;
-      case 'login':
-        this.sidenav.close();
-        break;
-    }
-  }
-
   logout(): void {
     this.userService.logout();
   }
