@@ -1,22 +1,19 @@
-
-.group-box-superior{
-  margin-top: 70px !important;
+.group-box-superior {
+  margin-top: 25px !important;
 }
 
-.group-box-bottom{
+.group-box-bottom {
   margin-top: 70px;
 }
 
-.img{
+.img {
   width: 100%;
   max-width: 250px;
   height: 100%;
   max-height: 250px;
 }
 
-.content-scroll{
-  // margin-top: 150px !important;
-}
+
 
 
 mat-toolbar {
@@ -36,7 +33,7 @@ mat-sidenav {
   // background-color: #3f1870;
   padding: 4px;
   text-align: center;
-  
+
 }
 
 .content {
@@ -55,7 +52,7 @@ mat-sidenav-container {
   }
 }
 
-.menu-button-logo{
+.menu-button-logo {
   margin-top: 60px;
 }
 
@@ -92,7 +89,7 @@ mat-icon {
 
 
 
-span{
+span {
   color: rgb(248, 242, 242);
   font-size: 20px;
 }
@@ -124,7 +121,7 @@ span{
   margin: 10px 0 5px;
   font-size: 22px;
   color: rgb(248, 242, 242) !important;
-  
+
 }
 
 .designation {
@@ -142,7 +139,6 @@ mat-divider {
   border-radius: 10px;
 }
 
-.mat-flat-button{
+.mat-flat-button {
   background-color: transparent !important;
 }
-
