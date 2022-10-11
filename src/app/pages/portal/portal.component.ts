@@ -89,7 +89,7 @@ export class PortalComponent implements OnInit {
   }
 
   openApp(port: number): void {
-    location.replace(`http://localhost:${port}/validate/${this.token}`);
+    location.replace(environment.port + `${port}/validate/${this.token}`);
   }
 
   logout(): void {
