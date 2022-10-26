@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
     // this.showTollbar = false;
     localStorage.clear();
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required]],
       password: [
         '',
         [

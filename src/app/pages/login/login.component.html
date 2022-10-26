@@ -24,13 +24,13 @@
                 formControlName="email"
                 placeholder="{{ 'login.user' | translate }}"
               />
-              <mat-error
+              <!-- <mat-error
                 *ngIf="
                   loginForm && loginForm.controls['email'].hasError('email')
                 "
               >
                 {{ "login.error_email_invalid" | translate }}</mat-error
-              >
+              > -->
               <mat-error
                 *ngIf="
                   loginForm && loginForm.controls['email'].hasError('required')
