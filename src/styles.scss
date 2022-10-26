@@ -97,44 +97,6 @@ html {
     margin-bottom: 24px !important;
 }
 
-.table-styles {
-    max-width: 1220px;
-
-    table {
-        width: 100%;
-    }
-
-    .envolti-table {
-        margin-top: 20px;
-        overflow: auto;
-        max-height: 565px;
-        width: 100%;
-        border-radius: 10px;
-
-        .mat-column-icon {
-            width: 50px;
-        }
-
-        .button-tab {
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .edit-button {
-            background-color: transparent !important;
-            color: white;
-        }
-    }
-}
-
-.table-button {
-    height: 100%;
-    margin-right: 0px !important;
-
-    mat-icon {
-        color: #753bbd;
-    }
-}
 
 .confirm-modal {
     mat-dialog-container {
@@ -186,10 +148,7 @@ h2 {
     color: #2f3133 !important;
 }
 
-.content-scroll {
-    overflow: auto;
-    height: calc(100vh - 280px);
-}
+.content-scroll {}
 
 .menu-button-logo {
     margin-top: 8px !important;
