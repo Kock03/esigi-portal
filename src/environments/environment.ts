@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:3500/api/v1/',
-  portal: 'http://localhost:3406/login',
-  port: 'http://localhost:',
+  baseUrl: 'http://44.198.33.18:3500/api/v1/',
+  portal: 'http://44.198.33.18:3406/login',
+  port: 'http://44.198.33.18:',
   message: 'LOCAL',
 };
 
