@@ -90,27 +90,27 @@ export class PortalComponent implements OnInit {
 
 
   openAppCustomer(){
-    location.replace(`http://44.198.33.18:3403/validate/${this.token}`)
+    location.replace(`http://44.205.159.254:3403/validate/${this.token}`)
   }
 
   openAppPeople(){
-    location.replace(`http://44.198.33.18:3401/validate/${this.token}`)
+    location.replace(`http://44.205.159.254:3401/validate/${this.token}`)
   }
 
   openAppProjects(){
-    location.replace(`http://44.198.33.18:3402/validate/${this.token}`)
+    location.replace(`http://44.205.159.254:3402/validate/${this.token}`)
   }
 
   openAppAuth(){
-    location.replace(`http://44.198.33.18:3405/validate/${this.token}`)
+    location.replace(`http://44.205.159.254:3405/validate/${this.token}`)
   }
 
   openAppAuthorization(){
-    location.replace(`http://44.198.33.18:3400/validate/${this.token}`)
+    location.replace(`http://44.205.159.254:3400/validate/${this.token}`)
   }
 
   openAppConfig(){
-    location.replace(`http://44.198.33.18:3404/validate/${this.token}`)
+    location.replace(`http://44.205.159.254:3404/validate/${this.token}`)
   }
   
 
