@@ -88,6 +88,10 @@ export class PortalComponent implements OnInit {
     this.router.navigate([route]);
   }
 
+  openApp(port: number): void {
+    location.replace(environment.port + `${port}/validate/${this.token}`);
+  }
+
 
   openAppCustomer(){
     location.replace(`http://192.168.8.184:3403/validate/${this.token}`)
