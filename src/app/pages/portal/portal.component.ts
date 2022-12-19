@@ -89,32 +89,39 @@ export class PortalComponent implements OnInit {
   }
 
   openApp(port: number): void {
+    this.token = localStorage.getItem('token')!;
     location.replace(environment.port + `${port}/validate/${this.token}`);
   }
 
 
   openAppCustomer(){
-    location.replace(`http://192.168.8.184:3403/validate/${this.token}`)
+    this.token = localStorage.getItem('token')!;
+    location.replace(`http://localhost:3403/validate/${this.token}`)
   }
 
   openAppPeople(){
-    location.replace(`http://192.168.8.184:3401/validate/${this.token}`)
+    this.token = localStorage.getItem('token')!;
+    location.replace(`http://localhost:3401/validate/${this.token}`)
   }
 
   openAppProjects(){
-    location.replace(`http://192.168.8.184:3402/validate/${this.token}`)
+    this.token = localStorage.getItem('token')!;
+    location.replace(`http://localhost:3402/validate/${this.token}`)
   }
 
   openAppAuth(){
-    location.replace(`http://192.168.8.184:3405/validate/${this.token}`)
+    this.token = localStorage.getItem('token')!;
+    location.replace(`http://localhost:3405/validate/${this.token}`)
   }
 
   openAppAuthorization(){
-    location.replace(`http://192.168.8.184:3400/validate/${this.token}`)
+    this.token = localStorage.getItem('token')!;
+    location.replace(`http://localhost:3400/validate/${this.token}`)
   }
 
   openAppConfig(){
-    location.replace(`http://192.168.8.184:3404/validate/${this.token}`)
+    this.token = localStorage.getItem('token')!;
+    location.replace(`http://localhost:3404/validate/${this.token}`)
   }
   
 
