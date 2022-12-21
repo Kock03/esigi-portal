@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   baseUrl: 'http://44.205.159.254::3500/api/v1/',
-  port: 'localhost:',
+  port: 'https://aws-amplify.d3tee2p1a2jxch.amplifyapp.com:',
   message: 'LOCAL',
 };
