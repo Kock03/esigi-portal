@@ -96,32 +96,32 @@ export class PortalComponent implements OnInit {
 
   openAppCustomer(){
     this.token = localStorage.getItem('token')!;
-    location.replace(`http://localhost:3403/validate/${this.token}`)
+    location.replace(`https://aws-amplify.d1oqygvt1734hb.amplifyapp.com/validate/${this.token}`)
   }
 
   openAppPeople(){
     this.token = localStorage.getItem('token')!;
-    location.replace(`http://localhost:3401/validate/${this.token}`)
+    location.replace(`https://aws-amplify.d26nj5ra7tr3nr.amplifyapp.com/validate/${this.token}`)
   }
 
   openAppProjects(){
     this.token = localStorage.getItem('token')!;
-    location.replace(`http://localhost:3402/validate/${this.token}`)
+    location.replace(`https://aws-amplify.d2rvrb6snp0n9a.amplifyapp.com/validate/${this.token}`)
   }
 
   openAppAuth(){
     this.token = localStorage.getItem('token')!;
-    location.replace(`http://localhost:3405/validate/${this.token}`)
+    location.replace(`https://aws-amplify.d23px3zakxjmn2.amplifyapp.com/validate/${this.token}`)
   }
 
   openAppAuthorization(){
     this.token = localStorage.getItem('token')!;
-    location.replace(`http://localhost:3400/validate/${this.token}`)
+    location.replace(`https://aws-amplify.dexdh2l4pqd7r.amplifyapp.com/validate/${this.token}`)
   }
 
   openAppConfig(){
     this.token = localStorage.getItem('token')!;
-    location.replace(`http://localhost:3404/validate/${this.token}`)
+    location.replace(`https://aws-amplify.d2ek7ilufy880x.amplifyapp.com/validate/${this.token}`)
   }
   
 
