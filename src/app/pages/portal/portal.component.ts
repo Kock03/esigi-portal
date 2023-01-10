@@ -116,7 +116,7 @@ export class PortalComponent implements OnInit {
 
   openAppAuthorization(){
     this.token = localStorage.getItem('token')!;
-    location.replace(`https://aws-amplify.dexdh2l4pqd7r.amplifyapp.com/validate/${this.token}`)
+    location.replace(`https://aws-amplify.d2eiu0c33r30oi.amplifyapp.com/validate/${this.token}`)
   }
 
   openAppConfig(){
