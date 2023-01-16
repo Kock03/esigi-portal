@@ -2,7 +2,7 @@ import { HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiGateway } from 'src/api-gateway';
 
-const apiVersion = 'auth/api/v1';
+const apiVersion = 'api/v1';
 
 @Injectable({
   providedIn: 'root',
